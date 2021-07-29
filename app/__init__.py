@@ -13,7 +13,7 @@ def create_app(debug):
     app.config['SECRET KEY'] = 'mysecret'
     CORS(app)
 
-
+    # Inititate the Socket
     socketio.init_app(app, cors_allowed_origins="*", ping_interval=(30, 100), engineio_logger=debug)
 
     app.register_blueprint(user_logging)
